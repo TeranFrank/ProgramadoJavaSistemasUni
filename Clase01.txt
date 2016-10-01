@@ -1,19 +1,21 @@
-<<<<<<< HEAD
 PROGRAMACION DEDUCTIVA
  >>DATALOG<<
 
 Referencias:
 >>http://gcoronelc.blogspot.pe/2015/09/ceps-uni-developer-day-2015.html<<
+>>http://gcoronelc.blogspot.pe/p/java.html<< Blog Profesor
+>>https://devcode.la/<< Curso Java
+>>https://www.udemy.com/courses/search/?q=java&src=ukw&price=price-free<< Curso Java Gratis
 
 Descargas:
 >>GIT for Windows[Grabar lo que haces]<<
-=======
-- Introducción al Curso
-- Instalación de Git
-- Creación de Cuenta en GitHub
-- Trabajando con GitHub
-- Ejemplo de Programación orientada al servicio
-- Clases y Objetos
-- Miembros de Clase
 
->>>>>>> 867ad45637f7921d3fa4a4e5eb062f71870e9ad1
+
+-Instalacion del Git
+-Creacion de Cuenta en GitHub
+-Trabajando con el GitHub
+-Ejemplo de Programación orientada a servicios
+-Clases y objetos
+-Miembros de Clase
+
+
