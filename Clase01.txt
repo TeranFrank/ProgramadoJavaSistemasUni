@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+PROGRAMACION DEDUCTIVA
+ >>DATALOG<<
+
+Referencias:
+>>http://gcoronelc.blogspot.pe/2015/09/ceps-uni-developer-day-2015.html<<
+
+Descargas:
+>>GIT for Windows[Grabar lo que haces]<<
+=======
+- Introducción al Curso
+- Instalación de Git
+- Creación de Cuenta en GitHub
+- Trabajando con GitHub
+- Ejemplo de Programación orientada al servicio
+- Clases y Objetos
+- Miembros de Clase
+
+>>>>>>> 867ad45637f7921d3fa4a4e5eb062f71870e9ad1
