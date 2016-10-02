@@ -11,6 +11,14 @@ Referencias:
 Descargas:
 >>GIT for Windows[Grabar lo que haces]<<
 
+Sentencias Git:
+
+>Git status: Ves las modificaciones dentro del repositorio
+>Git add . : Cada vez que se va agregar
+>Git commit -m "asd": leer los cambios
+>git pull: mandar los cambios a la web 
+>git push:mandar los cambios a la pc de la web 
+
 
 -Instalacion del Git
 -Creacion de Cuenta en GitHub
@@ -19,17 +27,6 @@ Descargas:
 -Clases y objetos
 -Miembros de Clase
 
+- psvm tab 
 
-tarea
-desarrollar un aplicacion que  permita calcular el importe de una venta.
-
-los datos son:
-
-- precio del articulo.
-- cantidad.
-
-se debe calcular:
-
-- el importe
-- el impuesto
-- el total
+- cuando una clase tiene el metodo main es una clase ejecutable
