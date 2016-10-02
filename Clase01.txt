@@ -16,8 +16,8 @@ Sentencias Git:
 >Git status: Ves las modificaciones dentro del repositorio
 >Git add . : Cada vez que se va agregar
 >Git commit -m "asd": leer los cambios
->git pull: mandar los cambios a la web 
->git push:mandar los cambios a la pc de la web 
+>git push: mandar los cambios a la web 
+>git pull:mandar los cambios a la pc de la web 
 
 
 -Instalacion del Git
