@@ -20,3 +20,16 @@ Descargas:
 -Miembros de Clase
 
 
+tarea
+desarrollar un aplicacion que  permita calcular el importe de una venta.
+
+los datos son:
+
+- precio del articulo.
+- cantidad.
+
+se debe calcular:
+
+- el importe
+- el impuesto
+- el total
