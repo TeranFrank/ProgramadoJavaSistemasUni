@@ -1,6 +1,6 @@
-package pe.egcc.MyMath.service;
+package pe.egcc.app.service;
 
-public class MyMathService {
+public class MyMath {
     
     public long CalcularFactorial(int numeroEntero){
         

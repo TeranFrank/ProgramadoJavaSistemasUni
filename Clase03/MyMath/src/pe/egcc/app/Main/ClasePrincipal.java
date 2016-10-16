@@ -1,6 +1,6 @@
-package pe.egcc.MyMath;
+package pe.egcc.app.Main;
 
-import pe.egcc.MyMath.view.MenuOperaciones;
+import pe.egcc.app.view.MenuOperaciones;
 
 public class ClasePrincipal {
 

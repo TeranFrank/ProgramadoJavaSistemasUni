@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.egcc.MyMath.view;
+package pe.egcc.app.view;
 
-import pe.egcc.MyMath.service.MyMathService;
+import pe.egcc.app.service.MyMath;
 
 /**
  *
@@ -86,7 +86,7 @@ public class formPrimos extends javax.swing.JInternalFrame {
         int numero;
         
         numero=Integer.parseInt(txtPrimerNumero.getText());
-        MyMathService Ope = new MyMathService();
+        MyMath Ope = new MyMath();
         esPrimo=Ope.CalcularPrimos(numero);
         
         if(esPrimo==true){

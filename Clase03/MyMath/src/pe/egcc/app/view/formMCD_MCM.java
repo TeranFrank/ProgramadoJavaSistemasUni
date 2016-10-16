@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.egcc.MyMath.view;
+package pe.egcc.app.view;
 
-import javax.swing.JOptionPane;
-import pe.egcc.MyMath.service.MyMathService;
+import pe.egcc.app.service.MyMath;
 
 /**
  *
  * @author Alumno
  */
-public class formFactorial extends javax.swing.JInternalFrame {
+public class formMCD_MCM extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form internalFactorial
+     * Creates new form formMCD_MCM
      */
-    public formFactorial() {
+    public formMCD_MCM() {
         initComponents();
     }
 
@@ -30,14 +29,20 @@ public class formFactorial extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtSegundoNumero = new javax.swing.JTextField();
+        lblResultado = new javax.swing.JLabel();
         btnCalcular = new javax.swing.JButton();
         txtPrimerNumero = new javax.swing.JTextField();
-        lblResultado = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Factorial");
+        setTitle("MCD-MCM");
+
+        lblResultado.setBackground(new java.awt.Color(0, 102, 102));
+        lblResultado.setForeground(new java.awt.Color(204, 0, 0));
+        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -46,53 +51,52 @@ public class formFactorial extends javax.swing.JInternalFrame {
             }
         });
 
-        lblResultado.setBackground(new java.awt.Color(0, 102, 102));
-        lblResultado.setForeground(new java.awt.Color(204, 0, 0));
-        lblResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(txtPrimerNumero)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(134, 134, 134)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(txtSegundoNumero)
+                    .addComponent(txtPrimerNumero))
+                .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(38, 38, 38)
                 .addComponent(txtPrimerNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSegundoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        long nFactorial;
-        int numero;
 
-        numero=Integer.parseInt(txtPrimerNumero.getText());
-        MyMathService Ope = new MyMathService();
-        nFactorial=Ope.CalcularFactorial(numero);
-
-        String reporte="";
-        reporte += "El Factorial de " + numero + " es: "+ nFactorial+"\n";
-        lblResultado.setText(reporte);
-
+        int numMCD,numMCM;
+        int numero1, numero2;
+        
+        numero1=Integer.parseInt(txtPrimerNumero.getText());
+        numero2=Integer.parseInt(txtSegundoNumero.getText());
+        MyMath Ope = new MyMath();
+        
+        numMCD=Ope.CalcularMCD(numero1, numero2);
+        numMCM=Ope.CalcularMCM(numero1, numero2);
+        
+        lblResultado.setText("MCD: " + numMCD + " / "+"MCM: "+ numMCM);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
 
@@ -100,5 +104,6 @@ public class formFactorial extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JTextField txtPrimerNumero;
+    private javax.swing.JTextField txtSegundoNumero;
     // End of variables declaration//GEN-END:variables
 }

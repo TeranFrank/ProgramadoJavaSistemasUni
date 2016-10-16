@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.egcc.MyMath.view;
+package pe.egcc.app.view;
 
-import pe.egcc.MyMath.service.MyMathService;
+import pe.egcc.app.service.MyMath;
 
 /**
  *
  * @author Alumno
  */
-public class formMCD_MCM extends javax.swing.JInternalFrame {
+public class formFibonacci extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form formMCD_MCM
+     * Creates new form formFibonacci
      */
-    public formMCD_MCM() {
+    public formFibonacci() {
         initComponents();
     }
 
@@ -29,20 +29,14 @@ public class formMCD_MCM extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtSegundoNumero = new javax.swing.JTextField();
-        lblResultado = new javax.swing.JLabel();
         btnCalcular = new javax.swing.JButton();
         txtPrimerNumero = new javax.swing.JTextField();
+        lblResultado = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("MCD-MCM");
-
-        lblResultado.setBackground(new java.awt.Color(0, 102, 102));
-        lblResultado.setForeground(new java.awt.Color(204, 0, 0));
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setTitle("Fibonacci");
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +44,11 @@ public class formMCD_MCM extends javax.swing.JInternalFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
+
+        lblResultado.setBackground(new java.awt.Color(0, 102, 102));
+        lblResultado.setForeground(new java.awt.Color(204, 0, 0));
+        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,7 +58,6 @@ public class formMCD_MCM extends javax.swing.JInternalFrame {
                 .addGap(134, 134, 134)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(txtSegundoNumero)
                     .addComponent(txtPrimerNumero))
                 .addContainerGap(135, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -70,10 +68,8 @@ public class formMCD_MCM extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(80, 80, 80)
                 .addComponent(txtPrimerNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSegundoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -86,17 +82,13 @@ public class formMCD_MCM extends javax.swing.JInternalFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
 
-        int numMCD,numMCM;
-        int numero1, numero2;
-        
-        numero1=Integer.parseInt(txtPrimerNumero.getText());
-        numero2=Integer.parseInt(txtSegundoNumero.getText());
-        MyMathService Ope = new MyMathService();
-        
-        numMCD=Ope.CalcularMCD(numero1, numero2);
-        numMCM=Ope.CalcularMCM(numero1, numero2);
-        
-        lblResultado.setText("MCD: " + numMCD + " / "+"MCM: "+ numMCM);
+        int numero,nFibonacci;
+        numero=Integer.parseInt(txtPrimerNumero.getText());
+        MyMath Ope = new MyMath();
+        Ope.CalcularFibonacci(numero);
+
+        lblResultado.setText(Ope.mostraSerie(numero));
+
     }//GEN-LAST:event_btnCalcularActionPerformed
 
 
@@ -104,6 +96,5 @@ public class formMCD_MCM extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JTextField txtPrimerNumero;
-    private javax.swing.JTextField txtSegundoNumero;
     // End of variables declaration//GEN-END:variables
 }

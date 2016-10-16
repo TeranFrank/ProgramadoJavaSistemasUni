@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.egcc.MyMath.view;
+package pe.egcc.app.view;
 
 import javax.swing.JInternalFrame;
 

@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.egcc.MyMath.view;
+package pe.egcc.app.view;
 
-import pe.egcc.MyMath.service.MyMathService;
+import javax.swing.JOptionPane;
+import pe.egcc.app.service.MyMath;
 
 /**
  *
  * @author Alumno
  */
-public class formFibonacci extends javax.swing.JInternalFrame {
+public class formFactorial extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form formFibonacci
+     * Creates new form internalFactorial
      */
-    public formFibonacci() {
+    public formFactorial() {
         initComponents();
     }
 
@@ -36,7 +37,7 @@ public class formFibonacci extends javax.swing.JInternalFrame {
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Fibonacci");
+        setTitle("Factorial");
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -47,7 +48,6 @@ public class formFibonacci extends javax.swing.JInternalFrame {
 
         lblResultado.setBackground(new java.awt.Color(0, 102, 102));
         lblResultado.setForeground(new java.awt.Color(204, 0, 0));
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -55,15 +55,16 @@ public class formFibonacci extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(txtPrimerNumero))
-                .addContainerGap(135, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(txtPrimerNumero)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,24 +73,25 @@ public class formFibonacci extends javax.swing.JInternalFrame {
                 .addComponent(txtPrimerNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        long nFactorial;
+        int numero;
 
-        int numero,nFibonacci;
         numero=Integer.parseInt(txtPrimerNumero.getText());
-        MyMathService Ope = new MyMathService();
-        Ope.CalcularFibonacci(numero);
-        
-        
+        MyMath Ope = new MyMath();
+        nFactorial=Ope.CalcularFactorial(numero);
 
-        lblResultado.setText(Ope.mostraSerie(numero));
+        String reporte="";
+        reporte += "El Factorial de " + numero + " es: "+ nFactorial+"\n";
+        lblResultado.setText(reporte);
 
     }//GEN-LAST:event_btnCalcularActionPerformed
 
